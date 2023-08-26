@@ -1,8 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro'
 import '../styles/global.css'
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = 'Sobre mi';
 const identity = {
@@ -25,9 +23,9 @@ const textCase = '4rem'
 
 ---
 
-<Layout title={pageTitle}>
-    <Header/>
-	<h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
+    
+
     <p>He aqui unos datos sobre mí</p>
     <ul>
         <li>Me llamo {identity.firstName}.</li>
@@ -47,17 +45,12 @@ const textCase = '4rem'
 {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
 
 
-		<Footer/>
-    <script>
-      import '../scripts/menu.js';
-      </script>
-</Layout >
+		
+   
+</BaseLayout>
 
 <style define:vars={{skillColor,fontWeight, textCase}}>
-  h1 {
-    color: purple;
-    font-size: var(--textCase);
-  }
+  
   .skill {
     color : var(--skillColor);
     font-weight:var(--fontWeight);
